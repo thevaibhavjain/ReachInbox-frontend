@@ -1,9 +1,9 @@
 import { Link, useNavigate } from "react-router-dom"; // Import Link from React Router DOM
-// import AppBar from "../components/AppBar";
+import AppBar from "../components/AppBar";
 import google from "../assets/google.svg";
-import logoname from ",,/assets/logoname.svg"
+// import logoname from "../assets/logo_name.svg"
 
-// import Footer from "../components/Footer";
+import Footer from "../components/Footer";
 
 function Login() {
     const Navigate = useNavigate()
@@ -16,12 +16,12 @@ function Login() {
   }
   const handleGoogleLogin = () => {
     // Redirect to Google login URL
-    window.location.href = "https://hiring.reachinbox.xyz/api/v1/auth/google-login?redirect_to=http://localhost:5173/";
+    window.location.href = "https://hiring.reachinbox.xyz/api/v1/auth/google-login?redirect_to=http://localhost:5174/";
   };
 
   return (
     <div>
-      {/* <AppBar /> */}
+      <AppBar />
       <div className="bg-black text-white w-screen h-screen flex flex-col justify-center items-center">
         <div className="bg-[#111214] text-center space-y-10 px-16 rounded-2xl border border-[#343A40]">
           <div className="">
@@ -52,7 +52,7 @@ function Login() {
           </div>
         </div>
       </div>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 }

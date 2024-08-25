@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 // import SubView from "../components/SubView";
 // import MainPage from "../components/MainPage";
-// import SideBar from "../components/SideBar";
+import SideBar from "../components/SideBar";
 // import TopBar from "../components/TopBar";
 import { useLocation, useNavigate } from "react-router-dom";
 
@@ -30,8 +30,8 @@ function OneBox() {
   if (selectedComponent === null) {
     return (
       <div className="h-screen w-screen dark:bg-black bg-white pl-14">
-        {/* <SideBar onMenuItemClick={handleMenuItemClick} />
-        <TopBar />
+        <SideBar onMenuItemClick={handleMenuItemClick} />
+        {/* <TopBar />
         <SubView /> */}
       </div>
     );
@@ -39,8 +39,8 @@ function OneBox() {
 
   return (
     <div className="h-screen w-screen dark:bg-black bg-white pl-14">
-      {/* <SideBar onMenuItemClick={handleMenuItemClick} />
-      <TopBar /> */}
+      <SideBar onMenuItemClick={handleMenuItemClick} />
+      {/* <TopBar /> */}
       <div>
        
       </div>
