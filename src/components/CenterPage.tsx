@@ -5,7 +5,8 @@ import { MdOutlineExpand } from "react-icons/md";
 import { FaReply } from "react-icons/fa";
 import { SlArrowDown } from "react-icons/sl";
 import { GoDotFill } from "react-icons/go";
-
+import CustomMail from "./CustomMail";
+import DeletePopUp from "./DeletePopUp";
 
 interface MailData {
   id: number;
@@ -160,7 +161,12 @@ const CenterPage: React.FC<Props> = ({ selectedThread }) => {
       </div>
       {/* @ts-ignore */}
       <div className="mx-8">
-        
+      {showPopUp && (
+          <CustomMail
+            threadId={selectedThread}
+            onClose={() => setShowPopUp(false)}
+          />
+        )}
       </div>
       <div
         className="cursor-pointer flex items-center fixed bottom-0 ml-10 mb-10 bg-gradient-to-r from-[#4B63DD] to-[#0524BFFC] rounded-md px-10 py-2"
@@ -168,7 +174,12 @@ const CenterPage: React.FC<Props> = ({ selectedThread }) => {
       >
         <FaReply className="mr-2 text-xl" /> Reply
       </div>
-     
+      {showDelete && (
+        <DeletePopUp
+          onCancel={() => setShowDelete(false)}
+          onDelete={handleDelete}
+        />
+      )}
     </div>
   );
 };
