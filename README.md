@@ -47,11 +47,12 @@ OneBox is a web application that allows users to log in using Google authenticat
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/your-username/onebox.git
-   cd onebox
+   git clone https://github.com/thevaibhavjain/ReachInbox-frontend.git
+   cd ReachInbox-frontend
 2. **Install dependancy and run App**:   
    ```bash
    npm install
    npm run dev
+
 3. Open the server.
-   
+   ```

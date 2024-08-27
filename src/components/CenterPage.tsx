@@ -36,7 +36,7 @@ const CenterPage: React.FC<Props> = ({ selectedThread }) => {
   const handleDelete = async () => {
     try {
       const token = localStorage.getItem("token");
-      await axios.delete(
+      const res= await axios.delete(
         `https://hiring.reachinbox.xyz/api/v1/onebox/messages/${selectedThread}`,
         {
           headers: {
@@ -45,6 +45,7 @@ const CenterPage: React.FC<Props> = ({ selectedThread }) => {
         }
       );
       setShowDelete(false);
+      alert(await res.data.message)
     } catch (error) {
       console.error("Error deleting mail:", error);
     }
