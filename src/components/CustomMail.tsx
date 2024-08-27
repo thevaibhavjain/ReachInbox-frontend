@@ -66,7 +66,7 @@ function CustomMail({ threadId, onClose }: any) {
 
   return (
     <div className="bg-gray-400/25 fixed top-0 left-0 flex justify-center items-center h-full w-full z-20">
-      <div className="bg-[#141517] w-1/2 h-4/5 rounded-lg border border-[#41464B]">
+      <div className="bg-[#141517] w-1/2 h-5/5 rounded-lg border border-[#41464B]">
         <div className="flex justify-between items-center px-4 bg-[#23272C] rounded-t-lg py-2 border-b border-[#41464B]">
           <div className="pl-4 text-sm">Reply</div>
           <div onClick={onClose}>

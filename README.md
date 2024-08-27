@@ -1,50 +1,57 @@
-# React + TypeScript + Vite
+# OneBox Email Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
 
-Currently, two official plugins are available:
+OneBox is a web application that allows users to log in using Google authentication and access their emails in an intuitive and user-friendly interface. Once authenticated, users are redirected to the OneBox email page, where they can view and manage their received emails, navigate through different sections, and enjoy a seamless experience.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## Expanding the ESLint configuration
+- **Google Authentication**: Secure login using Google OAuth2.0.
+- **Email Dashboard**: Access and manage your emails in a clean, organized interface.
+- **Navigation**: Easily switch between different sections like Inbox, Sent, Drafts, etc.
+- **Dark/Light Mode**: Toggle between dark and light themes for a comfortable viewing experience.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Project Structure
 
-- Configure the top-level `parserOptions` property like this:
+- **Login Page**:  
+  Users are required to log in via Google to access the OneBox application. If the user is already authenticated, they are redirected to the homepage.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+  - **Google Login**:  
+    The login page provides an option to sign up or sign in using Google. Upon clicking the Google login button, the user is redirected to the Google authentication page, and upon successful login, they are redirected back to the OneBox application.
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+  - **Account Creation**:  
+    Users can create an account through the provided link on the login page.
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+- **OneBox Page**:  
+  Once logged in, users are directed to the OneBox page, where they can access their emails.
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+  - **SideBar**:  
+    Provides navigation to different sections like Inbox, Sent, Drafts, etc.
+
+  - **TopBar**:  
+    Displays search functionality and theme toggle.
+
+  - **SubView**:  
+    Renders the content based on the selected navigation item.
+
+  - **AllInbox Component**:  
+    Displays the list of emails, allows searching, and shows new replies.
+
+  - **Mail Component**:  
+    Displays individual email information and handles user interactions like loading specific email threads.
+
+- **Theme Toggle**:  
+  Users can switch between dark and light modes to enhance their viewing experience.
+
+## Installation
+
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/your-username/onebox.git
+   cd onebox
+2. **Install dependancy and run App**:   
+   ```bash
+   npm install
+   npm run dev
+3. Open the server.
+   
